@@ -2,16 +2,17 @@ import React from 'react';
 
 const Sidebar = ({ jobs, onSelectJob }) => {
   return (
-    <div className="bg-gray-200 h-screen w-[20%] p-4">
-      <h2 className="text-lg font-semibold mb-4">New Job +</h2>
+    <div className="w-1/4 p-4 border-r">
+      <h2 className="text-lg font-semibold mb-4">Jobs</h2>
       <ul>
         {jobs.map((job) => (
-          <li
-            key={job.id}
-            className="cursor-pointer mb-2 p-2 rounded hover:bg-gray-300 text-wrap"
-            onClick={() => onSelectJob(job.id)}
-          >
-            {job.title}ts, with conditional visibility based on whether a job post
+          <li key={job.id} className="mb-2">
+            <button
+              onClick={() => onSelectJob(job.id)}
+              className="w-full text-left p-2 border rounded"
+            >
+              {job.title}
+            </button>
           </li>
         ))}
       </ul>
