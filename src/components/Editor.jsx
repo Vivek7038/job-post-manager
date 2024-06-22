@@ -13,7 +13,7 @@ const Editor = ({ job, setJob }) => {
     jobLocation: "",
     jobType: "",
     labels: [],
-    labelOptions: ["Is Remote", "5 Day week"], 
+    labelOptions: ["Is Remote", "5 Day week"],
   });
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Editor = ({ job, setJob }) => {
         jobLocation: job.jobLocation || "",
         jobType: job.jobType || "",
         labels: job.labels || [],
-        labelOptions: formData.labelOptions, 
+        labelOptions: formData.labelOptions,
       });
     }
   }, [job, formData.labelOptions]);
@@ -127,7 +127,13 @@ const Editor = ({ job, setJob }) => {
             name="rolesAndResponsibilities"
             value={formData.rolesAndResponsibilities}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border  border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50"
           />
         </div>
         <div className="mb-4">
@@ -180,12 +186,17 @@ const Editor = ({ job, setJob }) => {
         </div>
         <div className="mb-4">
           <label className="block text-sm mb-1">Call to Action</label>
-          <input
-            type="text"
+          <textarea
             name="callToAction"
             value={formData.callToAction}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border  border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50"
           />
         </div>
         <div className="mb-4">
