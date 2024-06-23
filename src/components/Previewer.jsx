@@ -58,7 +58,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("introduction") && (
           <div className="mb-4">
             <label className="text-base font-semibold">Introduction :</label>
-            <p className="text-sm">{job.introduction}</p>
+            <p className="text-sm text-wrap">{job.introduction}</p>
           </div>
         )}
 
@@ -68,7 +68,7 @@ const Previewer = ({ job, fieldVisibility }) => {
             <label className="text-base font-semibold">
               Roles and Responsibilities:
             </label>
-            <ul className="text-sm">
+            <ul className="text-sm text-wrap">
               {renderBulletPoints(job.rolesAndResponsibilities)}
             </ul>
           </div>
@@ -78,7 +78,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("company") && (
           <div className="mb-4 flex flex-row gap-x-2 items-center ">
             <label className="text-base font-semibold">Company :</label>
-            <p className="text-sm">{job.company}</p>
+            <p className="text-sm text-wrap">{job.company}</p>
           </div>
         )}
 
@@ -88,7 +88,7 @@ const Previewer = ({ job, fieldVisibility }) => {
             <label className="text-base font-semibold">
               Preferred Experience :
             </label>
-            <p className="text-sm">
+            <p className="text-sm text-wrap">
               {job.experienceRange.min} to {job.experienceRange.max} years
             </p>
           </div>
@@ -98,7 +98,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("qualifications") && (
           <div className="mb-4">
             <label className="text-base font-semibold">Qualifications :</label>
-            <p className="text-sm">{job.qualifications}</p>
+            <p className="text-sm text-wrap">{job.qualifications}</p>
           </div>
         )}
 
@@ -106,7 +106,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("salaryRange") && (
           <div className="mb-4  flex flex-row items-center gap-x-1">
             <label className="text-base font-semibold">Salary Range :</label>
-            <p className="text-sm">
+            <p className="text-sm text-wrap">
               {job.salaryRange.min} to {job.salaryRange.max} LPA
             </p>
           </div>
@@ -116,7 +116,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("callToAction") && (
           <div className="mb-4">
             <label className="text-base font-semibold">Call to Action :</label>
-            <p className="text-sm">{job.callToAction}</p>
+            <p className="text-sm text-wrap">{job.callToAction}</p>
           </div>
         )}
 
@@ -124,7 +124,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("jobLocation") && (
           <div className="mb-4  flex flex-row items-center gap-x-1">
             <label className="text-base font-semibold">Job Location :</label>
-            <p className="text-sm  font-medium text-wrap">{job.jobLocation}</p>
+            <p className="text-sm  font-medium text-wrap whitespace-nowrap">{job.jobLocation}</p>
           </div>
         )}
 
@@ -132,7 +132,7 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("jobType") && (
           <div className="mb-4  flex flex-row items-center gap-x-1">
             <label className="text-base font-semibold ">Job Type :</label>
-            <p className="text-sm bg-purple-700 text-yellow-300 w-fit px-2 py-1 border rounded-full hover:bg-purple-500">
+            <p className="text-sm bg-purple-700 text-white  w-fit px-2 py-1 border rounded-full hover:bg-purple-500">
               {job.jobType}
             </p>
           </div>
