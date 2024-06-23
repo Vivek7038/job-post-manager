@@ -10,7 +10,7 @@ const Sidebar = ({
   selectedJobId,
 }) => {
   return (
-    <div className="min-w-[20%] max-w-[20%] min-h-[100vh] p-4 border rounded-md border-green-300 border-3 mt-2 bg-teal-200">
+    <div className="min-w-[20%] max-w-[20%] min-h-[100vh] p-4 border rounded-md border-green-300 border-3 mt-2 bg-blue-50">
       <h2 className="text-lg font-semibold mb-4">Job Posts</h2>
       <button
         onClick={onNewJob}

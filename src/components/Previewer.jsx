@@ -26,7 +26,7 @@ const Previewer = ({ job, fieldVisibility }) => {
   return (
     <div className="w-[30%] p-4 min-h-[80vh] border rounded-md border-green-700 border-3 mt-2 bg-blue-50">
       <h2 className="text-lg font-semibold mb-4">Job Live Preview</h2>
-      <div className="border p-4 rounded border-blue-100">
+      <div className="border p-4 rounded border-blue-100 shadow-inner">
         <div className="mb-4 flex flex-row justify-between gap-1 items-center w-full ">
           {/* Job Post Title */}
           {isFieldVisible("title") && (
