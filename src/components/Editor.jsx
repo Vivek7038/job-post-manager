@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Editor = ({ job, setJob }) => {
+const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
   const [formData, setFormData] = useState({
     title: "",
     introduction: "",
@@ -51,10 +51,6 @@ const Editor = ({ job, setJob }) => {
       ...job,
       [name]: value,
     });
-    console.log({
-      ...job,
-      [name]: value,
-    });
   };
 
   const handleRangeChange = (e, rangeField) => {
@@ -94,6 +90,12 @@ const Editor = ({ job, setJob }) => {
       labels: updatedLabels,
     });
   };
+
+  const handleVisibilityCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    toggleFieldVisibility(name, checked);
+  };
+
   if (!job) return null;
 
   return (
@@ -101,7 +103,16 @@ const Editor = ({ job, setJob }) => {
       <h2 className="text-lg font-semibold mb-4">Edit Job</h2>
       <form>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Job Post Title</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="title"
+              checked={fieldVisibility.title}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Job Post Title
+          </label>
           <input
             type="text"
             name="title"
@@ -111,7 +122,16 @@ const Editor = ({ job, setJob }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Introduction</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="introduction"
+              checked={fieldVisibility.introduction}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Introduction
+          </label>
           <textarea
             name="introduction"
             value={formData.introduction}
@@ -121,23 +141,33 @@ const Editor = ({ job, setJob }) => {
         </div>
         <div className="mb-4">
           <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="rolesAndResponsibilities"
+              checked={fieldVisibility.rolesAndResponsibilities}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
             Roles and Responsibilities
           </label>
           <textarea
             name="rolesAndResponsibilities"
             value={formData.rolesAndResponsibilities}
             onChange={handleChange}
-            className="w-full p-2 border  border-gray-300
-            rounded-md
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50"
+            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Experience Range (yrs)</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="experienceRange"
+              checked={fieldVisibility.experienceRange}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Experience Range (yrs)
+          </label>
           <div className="flex">
             <input
               type="number"
@@ -156,7 +186,16 @@ const Editor = ({ job, setJob }) => {
           </div>
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Salary Range (LPA)</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="salaryRange"
+              checked={fieldVisibility.salaryRange}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Salary Range (LPA)
+          </label>
           <div className="flex">
             <input
               type="number"
@@ -175,7 +214,16 @@ const Editor = ({ job, setJob }) => {
           </div>
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Qualifications</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="qualifications"
+              checked={fieldVisibility.qualifications}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Qualifications
+          </label>
           <input
             type="text"
             name="qualifications"
@@ -185,22 +233,34 @@ const Editor = ({ job, setJob }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Call to Action</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="callToAction"
+              checked={fieldVisibility.callToAction}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Call to Action
+          </label>
           <textarea
             name="callToAction"
             value={formData.callToAction}
             onChange={handleChange}
-            className="w-full p-2 border  border-gray-300
-            rounded-md
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50"
+            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Company</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="company"
+              checked={fieldVisibility.company}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Company
+          </label>
           <input
             type="text"
             name="company"
@@ -210,7 +270,16 @@ const Editor = ({ job, setJob }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Job Location</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="jobLocation"
+              checked={fieldVisibility.jobLocation}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Job Location
+          </label>
           <input
             type="text"
             name="jobLocation"
@@ -220,7 +289,16 @@ const Editor = ({ job, setJob }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Job Type</label>
+          <label className="block text-sm mb-1">
+            <input
+              type="checkbox"
+              name="jobType"
+              checked={fieldVisibility.jobType}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Job Type
+          </label>
           <select
             name="jobType"
             value={formData.jobType}
