@@ -14,7 +14,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
     jobLocation: "",
     jobType: "",
     labels: [],
-    labelOptions: ["Is Remote", "5 Day week"],
+    labelOptions: ["Remote", "5 Day week"],
   });
 
   useEffect(() => {
@@ -147,7 +147,8 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             name="introduction"
             value={formData.introduction}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded resize-none overflow-y-auto"
+            rows="2"
           />
         </div>
         <div className="mb-4">
@@ -165,7 +166,8 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             name="rolesAndResponsibilities"
             value={formData.rolesAndResponsibilities}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 resize-none overflow-y-auto"
+            rows={2}
           />
         </div>
         <div className="mb-4">
@@ -258,7 +260,8 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             name="callToAction"
             value={formData.callToAction}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 resize-none overflow-y-auto"
+            rows={2}
           />
         </div>
         <div className="mb-4">
