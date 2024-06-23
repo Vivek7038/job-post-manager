@@ -10,7 +10,7 @@ const Sidebar = ({
   selectedJobId,
 }) => {
   return (
-    <div className="min-w-[20%] max-w-[20%] min-h-[100vh] p-4 border-r">
+    <div className="min-w-[20%] max-w-[20%] min-h-[100vh] p-4 border rounded-md border-green-300 border-3 mt-2 bg-teal-200">
       <h2 className="text-lg font-semibold mb-4">Job Posts</h2>
       <button
         onClick={onNewJob}
@@ -23,7 +23,7 @@ const Sidebar = ({
           <li key={job.id} className="mb-2 flex items-center justify-between ">
             <button
               onClick={() => onSelectJob(job.id)}
-              className={`flex-grow text-left text-wrap p-2 border rounded ${
+              className={`flex-grow text-left text-wrap p-2 border border-black rounded ${
                 selectedJobId === job.id
                   ? "bg-blue-200 shadow-lg transform scale-105"
                   : ""

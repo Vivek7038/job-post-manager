@@ -84,7 +84,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
     const { name, checked } = e.target;
     toggleFieldVisibility(name, checked);
   };
-  
+
   const handleLocationChange = (newLocation) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -99,7 +99,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
   if (!job) return null;
 
   return (
-    <div className="w-1/2 p-4">
+    <div className="w-1/2 p-4 border rounded-md border-blue-700 border-3 mt-2">
       <h2 className="text-lg font-semibold mb-4">Edit Job</h2>
       <form>
         <div className="mb-4">
