@@ -1,22 +1,9 @@
 import React, { useState, useEffect } from "react";
 import LocationInput from "./LocationInput";
 import TextareaField from "./TextAreaField";
-
+import { initialFormData } from "../data/FormData";
 const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
-  const [formData, setFormData] = useState({
-    title: "",
-    introduction: "",
-    rolesAndResponsibilities: "",
-    experienceRange: { min: "", max: "" },
-    qualifications: "",
-    salaryRange: { min: "", max: "" },
-    callToAction: "",
-    company: "",
-    jobLocation: "",
-    jobType: "",
-    labels: [],
-    labelOptions: ["Remote", "5 Day week"],
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   useEffect(() => {
     if (job) {
@@ -97,6 +84,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
     const { name, checked } = e.target;
     toggleFieldVisibility(name, checked);
   };
+  
   const handleLocationChange = (newLocation) => {
     setFormData((prevData) => ({
       ...prevData,
