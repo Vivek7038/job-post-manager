@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
@@ -7,6 +6,8 @@ import { useJobs } from "./hooks/useJobs";
 import { useFieldVisibility } from "./hooks/useFieldVisibility";
 
 const App = () => {
+
+  // custom hook to  get job posts data and handle events 
   const {
     jobs,
     selectedJobId,
@@ -18,6 +19,7 @@ const App = () => {
     handleDeleteJob,
   } = useJobs();
 
+  // custom hook to toggle visibility of fields on checkbox state
   const { fieldVisibility, toggleFieldVisibility } = useFieldVisibility({
     title: true,
     introduction: true,

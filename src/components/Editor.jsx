@@ -42,6 +42,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
     });
   };
 
+  // function to handle fields with min and max values 
   const handleRangeChange = (e, rangeField) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -60,6 +61,9 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
     });
   };
 
+
+
+  // function to handle  multiselect
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
     let updatedLabels = [...formData.labels];
@@ -85,6 +89,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
     toggleFieldVisibility(name, checked);
   };
 
+  // function for job location field onchange 
   const handleLocationChange = (newLocation) => {
     setFormData((prevData) => ({
       ...prevData,

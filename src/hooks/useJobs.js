@@ -7,7 +7,7 @@ export const useJobs = () => {
 
        const handleNewJob = () => {
               const newJob = {
-                     id: Date.now(),
+                     id: Date.now(), // for unique id 
                      title: "New Job",
                      introduction: "",
                      rolesAndResponsibilities: "",
