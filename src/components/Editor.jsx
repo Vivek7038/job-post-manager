@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import LocationInput from "./LocationInput";
 
 const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
   const [formData, setFormData] = useState({
@@ -94,6 +95,16 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
   const handleVisibilityCheckboxChange = (e) => {
     const { name, checked } = e.target;
     toggleFieldVisibility(name, checked);
+  };
+  const handleLocationChange = (newLocation) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      jobLocation: newLocation,
+    }));
+    setJob({
+      ...job,
+      jobLocation: newLocation,
+    });
   };
 
   if (!job) return null;
@@ -280,12 +291,9 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             />
             Job Location
           </label>
-          <input
-            type="text"
-            name="jobLocation"
+          <LocationInput
             value={formData.jobLocation}
-            onChange={handleChange}
-            className="w-full p-2 border rounded"
+            onChange={handleLocationChange}
           />
         </div>
         <div className="mb-4">
@@ -312,14 +320,15 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
         </div>
         <div className="mb-4">
           <label className="block text-sm mb-1">
-          <input
+            <input
               type="checkbox"
               name="labels"
               checked={fieldVisibility.labels}
               onChange={handleVisibilityCheckboxChange}
               className="mr-2"
             />
-            Labels</label>
+            Labels
+          </label>
           {formData.labelOptions.map((option) => (
             <div key={option} className="flex items-center">
               <input
