@@ -1,4 +1,3 @@
-// hooks/useFieldVisibility.js
 import { useState } from "react";
 
 export const useFieldVisibility = (initialVisibility) => {

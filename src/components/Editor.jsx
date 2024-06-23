@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LocationInput from "./LocationInput";
+import TextareaField from "./TextAreaField";
 
 const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
   const [formData, setFormData] = useState({
@@ -151,25 +152,14 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             rows="2"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium leading-6 text-gray-900">
-            <input
-              type="checkbox"
-              name="rolesAndResponsibilities"
-              checked={fieldVisibility.rolesAndResponsibilities}
-              onChange={handleVisibilityCheckboxChange}
-              className="mr-2"
-            />
-            Roles and Responsibilities
-          </label>
-          <textarea
-            name="rolesAndResponsibilities"
-            value={formData.rolesAndResponsibilities}
-            onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 resize-none overflow-y-auto"
-            rows={2}
-          />
-        </div>
+        <TextareaField
+          fieldName="rolesAndResponsibilities"
+          label="Roles and Responsibilities"
+          fieldVisibility={fieldVisibility}
+          handleVisibilityCheckboxChange={handleVisibilityCheckboxChange}
+          formData={formData}
+          handleChange={handleChange}
+        />
         <div className="mb-4">
           <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
@@ -226,25 +216,15 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             />
           </div>
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium leading-6 text-gray-900">
-            <input
-              type="checkbox"
-              name="qualifications"
-              checked={fieldVisibility.qualifications}
-              onChange={handleVisibilityCheckboxChange}
-              className="mr-2"
-            />
-            Qualifications
-          </label>
-          <textarea
-            name="qualifications"
-            value={formData.qualifications}
-            onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 resize-none overflow-y-auto"
-            rows={2}
-          />
-        </div>
+
+        <TextareaField
+          fieldName="qualifications"
+          label="Qualifications"
+          fieldVisibility={fieldVisibility}
+          handleVisibilityCheckboxChange={handleVisibilityCheckboxChange}
+          formData={formData}
+          handleChange={handleChange}
+        />
         <div className="mb-4">
           <label className="block text-sm font-medium leading-6 text-gray-900">
             <input

@@ -1,22 +1,7 @@
 import React from "react";
-
 const Previewer = ({ job, fieldVisibility }) => {
   if (!job) return null;
 
-  // Array of field names and their corresponding labels
-  const fields = [
-    { name: "title", label: "Job Post Title" },
-    { name: "introduction", label: "Introduction" },
-    { name: "rolesAndResponsibilities", label: "Roles and Responsibilities" },
-    { name: "company", label: "Company" },
-    { name: "experienceRange", label: "Experience Range" },
-    { name: "qualifications", label: "Qualifications" },
-    { name: "salaryRange", label: "Salary Range" },
-    { name: "callToAction", label: "Call to Action" },
-    { name: "jobLocation", label: "Job Location" },
-    { name: "jobType", label: "Job Type" },
-    { name: "labels", label: "Labels" },
-  ];
   const isFieldVisible = (fieldName) => {
     const field = job[fieldName];
     // Check if the field is an object with min and max properties and not empty
@@ -25,7 +10,7 @@ const Previewer = ({ job, fieldVisibility }) => {
       typeof field === "object" &&
       ("min" in field || "max" in field)
     ) {
-      return fieldVisibility[fieldName] && field.min !== "" && field.max!== "";
+      return fieldVisibility[fieldName] && field.min !== "" && field.max !== "";
     }
     return fieldVisibility[fieldName] && job[fieldName];
   };
