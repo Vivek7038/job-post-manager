@@ -40,3 +40,5 @@ http://localhost:5173/
 https://job-post-manager-react.vercel.app/
 
 ## here is a demo video
+
+https://www.loom.com/share/fbf8f535b72149fa817aa71b95134a59?sid=3e52fe2d-7916-4209-bcb9-5bf2e298e7d5
