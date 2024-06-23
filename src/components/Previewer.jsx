@@ -33,10 +33,10 @@ const Previewer = ({ job, fieldVisibility }) => {
     <div className="w-[30%] p-4 min-h-[80vh]">
       <h2 className="text-lg font-semibold mb-4">Job Preview</h2>
       <div className="border p-4 rounded">
-        <div className="mb-4 flex flex-row justify-between gap-1 items-center">
+        <div className="mb-4 flex flex-row justify-between gap-1 items-center w-full ">
           {/* Job Post Title */}
           {isFieldVisible("title") && (
-            <div className="">
+            <div className="w-full">
               <p className="text-lg font-bold text-wrap">{job.title}</p>
             </div>
           )}
@@ -45,7 +45,7 @@ const Previewer = ({ job, fieldVisibility }) => {
               {job.labels.map((label, index) => (
                 <span
                   key={index}
-                  className="inline-block bg-teal-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2 hover:bg-teal-600 cursor-pointer"
+                  className="inline-block bg-teal-500 text-white rounded-full px-3 py-1 text-sm font-semibold  hover:bg-teal-600 cursor-pointer"
                 >
                   {label}
                 </span>
@@ -95,10 +95,13 @@ const Previewer = ({ job, fieldVisibility }) => {
         )}
 
         {/* Qualifications */}
+
         {isFieldVisible("qualifications") && (
           <div className="mb-4">
             <label className="text-base font-semibold">Qualifications :</label>
-            <p className="text-sm text-wrap">{job.qualifications}</p>
+            <ul className="text-sm text-wrap">
+              {renderBulletPoints(job.qualifications)}
+            </ul>
           </div>
         )}
 
@@ -124,7 +127,9 @@ const Previewer = ({ job, fieldVisibility }) => {
         {isFieldVisible("jobLocation") && (
           <div className="mb-4  flex flex-row items-center gap-x-1">
             <label className="text-base font-semibold">Job Location :</label>
-            <p className="text-sm  font-medium text-wrap whitespace-nowrap">{job.jobLocation}</p>
+            <p className="text-sm  font-medium text-wrap whitespace-nowrap">
+              {job.jobLocation}
+            </p>
           </div>
         )}
 

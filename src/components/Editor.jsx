@@ -237,12 +237,12 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
             />
             Qualifications
           </label>
-          <input
-            type="text"
+          <textarea
             name="qualifications"
             value={formData.qualifications}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 resize-none overflow-y-auto"
+            rows={2}
           />
         </div>
         <div className="mb-4">
