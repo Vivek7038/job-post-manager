@@ -114,7 +114,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
       <h2 className="text-lg font-semibold mb-4">Edit Job</h2>
       <form>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="title"
@@ -133,7 +133,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="introduction"
@@ -151,7 +151,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="rolesAndResponsibilities"
@@ -169,7 +169,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="experienceRange"
@@ -197,7 +197,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           </div>
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="salaryRange"
@@ -225,7 +225,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           </div>
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="qualifications"
@@ -244,7 +244,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="callToAction"
@@ -262,7 +262,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="company"
@@ -281,7 +281,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="jobLocation"
@@ -297,7 +297,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="jobType"
@@ -319,7 +319,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">
+          <label className="block text-sm font-medium leading-6 text-gray-900">
             <input
               type="checkbox"
               name="labels"
@@ -336,7 +336,7 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
                 name={option}
                 checked={formData.labels.includes(option)}
                 onChange={handleCheckboxChange}
-                className="mr-2"
+                className="mr-2 "
               />
               <span>{option}</span>
             </div>
