@@ -311,7 +311,15 @@ const Editor = ({ job, setJob, fieldVisibility, toggleFieldVisibility }) => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1">Labels</label>
+          <label className="block text-sm mb-1">
+          <input
+              type="checkbox"
+              name="labels"
+              checked={fieldVisibility.labels}
+              onChange={handleVisibilityCheckboxChange}
+              className="mr-2"
+            />
+            Labels</label>
           {formData.labelOptions.map((option) => (
             <div key={option} className="flex items-center">
               <input

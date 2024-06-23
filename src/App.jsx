@@ -19,12 +19,51 @@ const App = () => {
     jobType: true,
     labels: true,
   });
+
+  const handleNewJob = () => {
+    const newJob = {
+      id: Date.now(),
+      title: "New Job",
+      introduction: "",
+      rolesAndResponsibilities: "",
+      experienceRange: { min: "", max: "" },
+      qualifications: "",
+      salaryRange: { min: "", max: "" },
+      callToAction: "",
+      company: "",
+      jobLocation: "",
+      jobType: "",
+      labels: [],
+    };
+    setJobs([...jobs, newJob]);
+    setSelectedJobId(newJob.id);
+    setJob(newJob);
+  };
+
   const handleSelectJob = (id) => {
     setSelectedJobId(id);
   };
 
   const handleJobChange = (updatedJob) => {
     setJobs(jobs.map((job) => (job.id === updatedJob.id ? updatedJob : job)));
+  };
+
+  const handleDuplicateJob = (id) => {
+    const jobToDuplicate = jobs.find((job) => job.id === id);
+    const duplicatedJob = {
+      ...jobToDuplicate,
+      id: Date.now(),
+      title: `${jobToDuplicate.title} (Copy)`,
+    };
+    setJobs([...jobs, duplicatedJob]);
+  };
+
+  const handleDeleteJob = (id) => {
+    setJobs(jobs.filter((job) => job.id !== id));
+    if (selectedJobId === id) {
+      setSelectedJobId(null);
+      setJob(null);
+    }
   };
 
   const selectedJob = jobs.find((job) => job.id === selectedJobId);
@@ -36,11 +75,23 @@ const App = () => {
   };
   return (
     <div className="flex">
-      <Sidebar jobs={jobs} onSelectJob={handleSelectJob} />
+      <Sidebar
+        jobs={jobs}
+        onSelectJob={handleSelectJob}
+        onDuplicateJob={handleDuplicateJob}
+        onDeleteJob={handleDeleteJob}
+        onNewJob={handleNewJob}
+        selectedJobId={selectedJobId}
+      />
       {selectedJob && (
         <>
-          <Editor job={selectedJob} setJob={handleJobChange}  fieldVisibility={fieldVisibility} toggleFieldVisibility={toggleFieldVisibility}/>
-          <Previewer job={selectedJob}  fieldVisibility={fieldVisibility} />
+          <Editor
+            job={selectedJob}
+            setJob={handleJobChange}
+            fieldVisibility={fieldVisibility}
+            toggleFieldVisibility={toggleFieldVisibility}
+          />
+          <Previewer job={selectedJob} fieldVisibility={fieldVisibility} />
         </>
       )}
     </div>

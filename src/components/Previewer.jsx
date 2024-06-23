@@ -6,9 +6,9 @@ const Previewer = ({ job, fieldVisibility }) => {
   // Array of field names and their corresponding labels
   const fields = [
     { name: "title", label: "Job Post Title" },
-    { name: "company", label: "Company" },
     { name: "introduction", label: "Introduction" },
     { name: "rolesAndResponsibilities", label: "Roles and Responsibilities" },
+    { name: "company", label: "Company" },
     { name: "experienceRange", label: "Experience Range" },
     { name: "qualifications", label: "Qualifications" },
     { name: "salaryRange", label: "Salary Range" },
