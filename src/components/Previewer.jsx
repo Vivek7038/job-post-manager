@@ -18,7 +18,16 @@ const Previewer = ({ job, fieldVisibility }) => {
     { name: "labels", label: "Labels" },
   ];
   const isFieldVisible = (fieldName) => {
-    return fieldVisibility[fieldName];
+    const field = job[fieldName];
+    // Check if the field is an object with min and max properties and not empty
+    if (
+      field &&
+      typeof field === "object" &&
+      ("min" in field || "max" in field)
+    ) {
+      return fieldVisibility[fieldName] && field.min !== "" && field.max!== "";
+    }
+    return fieldVisibility[fieldName] && job[fieldName];
   };
 
   const renderBulletPoints = (text) => {
