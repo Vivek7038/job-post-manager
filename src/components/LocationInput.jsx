@@ -8,7 +8,7 @@ const LocationInput = ({ value, onChange }) => {
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       fetchSuggestions();
-    }, 2000); // debouced timer to reduce api calls 
+    }, 800); // debouced timer to reduce api calls 
 
     return () => clearTimeout(debounceTimer);
   }, [query]); 
